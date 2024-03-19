@@ -127,13 +127,14 @@ export default /*#__PURE__*/ defineBuiltInComponent({
     }
 
     const setCurrent = (current: number) => {
-      // instance?.$waitNativeRender(() => {
-      setTimeout(() => {
+      instance?.$waitNativeRender(() => {
+        // setTimeout(() => {
         let scrollTop = current * data.indicatorHeight
         scrollViewRef.value!.scrollTop = scrollTop
         data.current = current
         data.scrollToElementTime = Date.now()
-      }, 50)
+        // }, 50)
+      })
     }
 
     const created = () => {
